@@ -1,0 +1,9 @@
+name: 'Deploy Commit JAR:'
+description: 'Deploy Commit JAR'
+
+runs:
+  using: "composite"
+  steps:
+    - name: Echo prueba
+      run: cat ./todo
+      shell: bash
