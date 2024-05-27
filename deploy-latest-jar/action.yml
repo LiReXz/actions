@@ -6,8 +6,13 @@ runs:
   
   steps:
     - name: Checkout
-      uses: actions/checkout@v4
-      
+      run: |
+        git init
+        git remote add origin https://github.com/${{ github.repository }}.git
+        git fetch --depth=1 origin ${{ inputs.commit }}
+        git checkout FETCH_HEAD
+      shell: bash
+
     - name: Echo prueba
       run: cat ./todo
       shell: bash
