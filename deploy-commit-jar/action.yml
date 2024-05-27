@@ -7,13 +7,7 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - name: Checkout
-      run: |
-        git init
-        git remote add origin https://github.com/${{ github.repository }}.git
-        git fetch --depth=1 origin ${{ inputs.commit }}
-        git checkout FETCH_HEAD
-      shell: bash
+
     - name: Echo prueba
       run: cat ./todo
       shell: bash

@@ -5,12 +5,9 @@ runs:
   using: "composite"
   
   steps:
-    - name: Checkout
+    - name: Change to commit
       run: |
-        git init
-        git remote add origin https://github.com/${{ github.repository }}.git
-        git fetch --depth=1 origin ${{ inputs.commit }}
-        git checkout FETCH_HEAD
+        git checkout ${{ inputs.commit }}
       shell: bash
 
     - name: Echo prueba
