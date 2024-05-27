@@ -8,6 +8,11 @@ runs:
   using: "composite"
   steps:
 
+    - name: Change to commit
+      run: |
+        git checkout ${{ inputs.commit }}
+      shell: bash
+      
     - name: Echo prueba
       run: cat ./todo
       shell: bash
